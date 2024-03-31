@@ -17,7 +17,12 @@ public class CharacterAnimationDelegate : MonoBehaviour
 
     [SerializeField]
     private AudioClip whoosh_Sound, fall_Sound, ground_Hit_Sound, dead_Sound;
+
     private EnemyMovement enemy_Movement;
+    private CapsuleCollider enemy_capsule;
+    private SphereCollider enemy_Sphere;
+
+    private ShakeCamera shakeCamera;
 
     void Awake()
     {
@@ -26,8 +31,12 @@ public class CharacterAnimationDelegate : MonoBehaviour
 
         if (gameObject.CompareTag(Tags.ENEMY_TAG))
         {
-            enemy_Movement = GetComponent<EnemyMovement>();
+            enemy_Movement = GetComponentInParent<EnemyMovement>();
+            enemy_capsule = GetComponentInParent<CapsuleCollider>();
+            enemy_Sphere = GetComponentInParent<SphereCollider>();
         }
+
+        shakeCamera = GameObject.FindWithTag(Tags.MAIN_CAMERA_TAG).GetComponent<ShakeCamera>();
     }
 
     void Left_Arm_Attack_On()
@@ -47,7 +56,8 @@ public class CharacterAnimationDelegate : MonoBehaviour
 
     void Right_Arm_Attack_Off()
     {
-        if (right_Arm_Attack_Point.activeInHierarchy) {
+        if (right_Arm_Attack_Point.activeInHierarchy) 
+        {
             right_Arm_Attack_Point.SetActive(false);
         }
     }
@@ -72,7 +82,8 @@ public class CharacterAnimationDelegate : MonoBehaviour
 
     void Right_Leg_Attack_Off()
     {
-        if (right_Leg_Attack_Point.activeInHierarchy) {
+        if (right_Leg_Attack_Point.activeInHierarchy) 
+        {
             right_Leg_Attack_Point.SetActive(false);
         }
         
@@ -131,5 +142,40 @@ public class CharacterAnimationDelegate : MonoBehaviour
     {
         audioSource.clip = ground_Hit_Sound;
         audioSource.Play(); 
-}
+    }
+
+    void DisableMovement()
+    {
+        enemy_Movement.enabled = false;
+
+        //set the enemy parent to default layer
+        transform.parent.gameObject.layer = 0;
+    }
+
+    void EnableMovemet()
+    {
+        enemy_Movement.enabled = true;
+
+        //set the enemy parent to Enemy layer
+        transform.parent.gameObject.layer = 10;
+    }
+
+    void ShakeCameraOnFall()
+    {
+        shakeCamera.ShouldShake = true; 
+    }
+
+    void CharacterDied()
+    {
+        enemy_capsule.enabled = false;
+        enemy_Sphere.enabled = false;
+        Invoke("DeactivateGameObject", 2f);
+    }
+    void DeactivateGameObject()
+    {
+        ManagerEnemy.instance.SpawnEnemy();
+        ManagerEnemy2.instance.SpawnEnemy2();
+        gameObject.SetActive(false);
+
+    }
 }

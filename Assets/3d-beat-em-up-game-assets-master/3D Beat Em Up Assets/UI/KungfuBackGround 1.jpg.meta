@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 80b633276129d0f4ea937c5e90570412
+guid: b128131058e160f4ab64e23389bf2344
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,22 +119,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HealthBarBg_0
+      name: KungfuBackGround 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 32
-        height: 32
+        y: 1
+        width: 429
+        height: 239
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38a4e5c6f123121479386b1f5f28f612
-      internalID: -494764426
+      spriteID: 2cb8814d2032b0044861c2914ffc1737
+      internalID: -553099336
       vertices: []
       indices: 
       edges: []
@@ -142,7 +142,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 55974ffd715090a49af2c50fff8d22bd
+    spriteID: 230f11d9eb050bc43afe1d9e20705f36
     internalID: 0
     vertices: []
     indices: 
@@ -150,7 +150,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HealthBarBg_0: -494764426
+      KungfuBackGround 1_0: -553099336
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

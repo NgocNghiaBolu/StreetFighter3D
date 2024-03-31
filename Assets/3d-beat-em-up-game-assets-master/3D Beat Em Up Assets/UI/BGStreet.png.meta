@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 80b633276129d0f4ea937c5e90570412
+guid: 7960a20703794464d9fa16598df2ab7b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,22 +119,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HealthBarBg_0
+      name: BGStreet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 1
+        y: 3
+        width: 959
+        height: 535
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38a4e5c6f123121479386b1f5f28f612
-      internalID: -494764426
+      spriteID: d4e3ada30bb20c44290dfb60a68a582d
+      internalID: -1259978303
       vertices: []
       indices: 
       edges: []
@@ -142,7 +142,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 55974ffd715090a49af2c50fff8d22bd
+    spriteID: 4b8ea63cf5abc664792d0e3e8173229a
     internalID: 0
     vertices: []
     indices: 
@@ -150,7 +150,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HealthBarBg_0: -494764426
+      BGStreet_0: -1259978303
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
